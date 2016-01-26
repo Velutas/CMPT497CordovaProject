@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<link rel="stylesheet" type="text/css" href="css/Styles.css">
+	
+    <script type="text/javascript" src="cordova.js"></script>
+	<script type="text/javascript" src="js/Map.js"></script> 
+ </head>
+  
+ <body>
+	<h1>Map View</h1>
+	<img class="AppLogo" src = "img/AppLogo.png" alt="LOGO">
+	<a class="NavButton TopIcon" href="About.html">About</a>
+				
+	<table><tr><td class="NavButton">
+		<a href="index.html" onClick="CloseMap();">List All</a>
+		</td><td class="NavButton">
+		<a href="Categories.html" onClick="CloseMap();">Categories</a>
+		</td><td class="NavButton ActivePage">
+		Map View
+	</td></tr></table>
+	
+    <div class="MapCanvas" id="MapCanvas"></div>
+    <button id="MapFullScreen">Full Screen</button>
+</body>
+</html>
