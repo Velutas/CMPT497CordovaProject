@@ -3,33 +3,79 @@
 <html>
     <head>
 		<title>List All</title>
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+        <meta http-equiv="Content-Security-Policy" content="default-src &apos;self&apos; data: gap: https://ssl.gstatic.com &apos;unsafe-eval&apos;; style-src &apos;self&apos; &apos;unsafe-inline&apos;; media-src *">
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
         <link rel="stylesheet" type="text/css" href="css/Styles.css">
+		<link rel="stylesheet" type="text/css" href="js/jquery-1.5.0.mobile.min.css">
+		<style>
+		/* For avoiding title truncation in wp8 */
+		.ui-header .ui-title {
+				overflow: visible !important;
+		}
+		/* For fixing the absolute position issue for the default cordova gen page*/
+		#cjp-accordion1 .app {
+				left: 5px !important;
+				margin: 5px !important;
+				position: relative !important;
+		}
+		</style>
 		<script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/jquery-1.11.1.min.js" id="cordova-jquery"></script>
+		<script type="text/javascript" id="jqm-trans-disable">
+		/* For having a faster transition */
+		$(document).on("mobileinit", function() {
+				$.mobile.defaultPageTransition = "none";
+				$.mobile.defaultDialogTransition = "none";
+		});
+		</script>
+        <script type="text/javascript" src="js/jquery-1.5.0.mobile.min.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
 		<script type="text/javascript" src="js/BuildLists.js"></script>
+		
+		<!-- http://www.w3schools.com/jquery/ajax_get.asp -->
+		<script type="text/javascript" src="js/jquery-1.5.0.mobile.min.js">
+			$("button").click(function(){
+				$.get("data/testdata.json", function(data, status){
+					alert("Data: " + data + "\nStatus: " + status);
+				});
+			});
+		</script>
     </head>
 	
     <body>
-		<h1>All Attractions</h1> 
-		<img class="AppLogo" src = "img/AppLogo.png" alt="LOGO">
-		<a class="NavButton TopIcon" href="About.html">About</a>
+		<div data-role="page" id="page1">
+			<div data-role="header"><h1>Page 1</h1></div>
+			<div data-role="content">Introductory text can be placed here ...</div>
+			<div data-role="collapsible-set">
+				<div id="cjp-accordion1" data-role="collapsible" data-collapsed="false">
+					<h3>Section 1</h3>
+					<p></p><p>Page 1 content goes here</p><p></p>
+				</div>
+				<div data-role="collapsible">
+					<h3>Section 2</h3>
+					<p>Section 2</p>
+				</div>
+				<div data-role="collapsible">
+					<h3>Section 3</h3>
+					<p>Section 3</p>
+				</div>
+			</div>
 		
-		<table><tr><td class="NavButton ActivePage">
+
+			<div data-role="footer" data-position="fixed">
+				<h4>Page 1 Footer</h4>
+			</div>
+			<!-- end page 1 footer -->
+		</div>
+<h1>All Attractions</h1><img class="AppLogo" src="img/AppLogo.png" alt="LOGO"><a class="NavButton TopIcon" href="About.html">About</a><table><tr><td class="NavButton ActivePage">
 			List All
 			</td><td class="NavButton">
 			<a href="Categories.html">Categories</a>
 			</td><td class="NavButton">
 			<a href="Map.html">Map View</a>
-		</td></tr></table>
-		<p>
-		<a class="Testing" href = "http://ec2-54-218-45-124.us-west-2.compute.amazonaws.com/">Database Test</a>
-		</p>
-		
-		<div id="EventList" class="Testing">List</div>
-		
-	</body>
+		</td></tr></table><p>
+		<a class="Testing" href="http://ec2-54-218-45-124.us-west-2.compute.amazonaws.com/">Database Test</a>
+		</p><a href="data/testdata.json">Send Request</a><button>Send an HTTP GET request to a page and get the result back</button></body>
 </html>

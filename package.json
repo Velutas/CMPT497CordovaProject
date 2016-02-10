@@ -1,0 +1,26 @@
+{
+  "name": "initialize",
+  "version": "1.0.0",
+  "description": "init of npm",
+  "main": "index.js",
+  "dependencies": {
+    "cordova-jquery": "^0.1.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "npm list"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Velutas/CMPT497CordovaProject.git"
+  },
+  "keywords": [
+    "npm"
+  ],
+  "author": "simone",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Velutas/CMPT497CordovaProject/issues"
+  },
+  "homepage": "https://github.com/Velutas/CMPT497CordovaProject#readme"
+}
