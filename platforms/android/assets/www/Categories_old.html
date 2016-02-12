@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+		<title>Categories</title>
+		<meta charset="utf-8">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/Styles.css">
+		<script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+		
+		<script type="text/javascript" src="js/jquery-1.11.1.min.js" id="cordova-jquery"></script>
+		
+		<script type="text/javascript" src="js/BuildLists.js"></script>
+    </head>
+	
+    <body>
+		<h1>By Category</h1>
+		<img class="AppLogo" src = "img/AppLogo.png" alt="LOGO">
+		<a class="NavButton TopIcon" href="About.html">About</a>
+		
+		
+		<table><tr><td class="NavButton">
+			<a href="index.html">List All</a>
+			</td><td class="NavButton ActivePage">
+			Categories
+			</td><td class="NavButton">
+			<a href="Map.html">Map View</a>
+		</td></tr></table>
+		
+		<div id="EventList" class="Testing">List</div>
+		
+		<a href="data/testdata.json">Send Request</a>
+		<button>Send an HTTP GET request to a page and get the result back</button>
+		
+    </body>
+</html>
