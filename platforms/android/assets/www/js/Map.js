@@ -28,6 +28,7 @@ document.addEventListener("deviceready", function(){
 		map = plugin.google.maps.Map.getMap(div);
 		
 		Location = map.getMyLocation(GPS, onSuccess(Location), onError);
+		map.setLocation(Location);
 	
 		map.addEventListener(plugin.google.maps.event.MAP_READY, MapReady);
     }, false);

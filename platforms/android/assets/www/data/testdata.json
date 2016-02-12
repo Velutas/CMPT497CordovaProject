@@ -1,8 +1,0 @@
-[	
-	{ "Name" : "Painting", 	"Location" : "Yaletown", 	"Time" : "1:00" }, 
-	{ "Name" : "Cooking", 	"Location" : "Gastown", 	"Time" : "12:00" }, 
-	{ "Name" : "Reading", 	"Location" : "Georgia St.", "Time" : "5:00" }, 
-	{ "Name" : "Free Food", "Location" : "Burrard", 	"Time" : "7:00" }, 
-	{ "Name" : "Spanish Class", "Location" : "Hastings", "Time" : "23:00" }, 
-	{ "Name" : "Skating", 	"Location" : "Whistler", 	"Time" : "18:00" } 
-]
