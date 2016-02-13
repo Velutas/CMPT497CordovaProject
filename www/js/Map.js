@@ -16,10 +16,10 @@ var GPS = {
 };
 
 function onSuccess(Location){
-	alert(Location);
+	alert("Success");
 }
 function onError(Location){
-	alert("Oh...");
+	alert("Error");
 }
 
 

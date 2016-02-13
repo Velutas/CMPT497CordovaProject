@@ -4,26 +4,30 @@
 	<meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	
-	<link rel="stylesheet" type="text/css" href="css/Styles.css">
+	<link rel="stylesheet" type="text/css" href="js/jquery-1.5.0.mobile.min.css">
+	<link rel="stylesheet" type="text/css" href="css/Styles_old.css">
 	
     <script type="text/javascript" src="cordova.js"></script>
 	<script type="text/javascript" src="js/Map.js"></script> 
  </head>
   
  <body>
-	<h1>Map View</h1>
-	<img class="AppLogo" src = "img/AppLogo.png" alt="LOGO">
-	<a class="NavButton TopIcon" href="About.html">About</a>
-				
+	<header>
+		<h1>Map View</h1>
+		<img class="AppLogo" src = "img/AppLogo.png" alt="LOGO">
+		<a class="NavButton TopIcon" href="index.html#About">About</a>
+	</header>			
 	<table><tr><td class="NavButton">
-		<a href="index.html" onClick="CloseMap();">List All</a>
+		<a href="index.html#Nearby" onClick="CloseMap();">List All</a>
 		</td><td class="NavButton">
-		<a href="Categories.html" onClick="CloseMap();">Categories</a>
+		<a href="index.html#Categories" onClick="CloseMap();">Categories</a>
 		</td><td class="NavButton ActivePage">
 		Map View
 	</td></tr></table>
 	
     <div class="MapCanvas" id="MapCanvas"></div>
-    <button id="MapFullScreen">Full Screen</button>
+	<footer>
+		<button id="MapFullScreen">Full Screen</button>
+	</footer>
 </body>
 </html>
