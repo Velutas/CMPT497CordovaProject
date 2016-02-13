@@ -1,10 +1,36 @@
+.Testing{
+	color: red;
+}
+
 body {
     -webkit-touch-callout: none; 
 	margin: 0px;
-	margin-top: 8px;
+	margin-top: 0px;
 	
 	font-family: Helvetica;
     font-size:1em;
+}
+header {
+	padding-top: 8px;
+	background-color: #e9e9e9;
+	
+}
+footer {
+	text-align: center;
+	position: fixed;
+	width: 100%;
+	bottom:0;
+	
+	background-color: #e9e9e9;
+	padding: .7em;
+}
+
+footer button{
+	text-align: center;
+	font-weight: 700;
+	
+	border: 0;
+	background-color: transparent;
 }
 
 h1 {
@@ -12,8 +38,7 @@ h1 {
 	display: inline-block;
 	
 	padding:0;
-	padding-top: .1em;
-	margin: 0;
+	margin: 0 0 5px 0;
 	
 	font-size:1.5em;
 	font-variant:small-caps;
@@ -24,26 +49,20 @@ p{
 }
 
 a{
-	color: #E4E4E4;
-	text-decoration: none;
+	color: #E4E4E4 !important;
+	font-size:1.2em !important;
+	text-decoration: none !important;
+	background-color: transparent !important;
+	border-color: transparent !important;
+	font-weight: 700;
 }
 
-.Testing{
-	color: red;
-}
 
 table{
 	margin-left: auto;
 	margin-right: auto;
-<<<<<<< HEAD
 	margin-top: 0px;
 	
-	height: .5em !important;
-=======
-	margin-top: 10px;
-	
-	height: 50px;
->>>>>>> parent of ac39a33... Fix jquery page requests
 	width: 100%;
 	
 	background-color:#333333;
@@ -52,38 +71,30 @@ table{
 
 .NavButton {
 	background-color:#333333;
-<<<<<<< HEAD
-	padding: 0px 0px;
-=======
-	padding: 5px 0px;
->>>>>>> parent of ac39a33... Fix jquery page requests
+	padding: 17px 0px;
 	width: 33%;
 	
 	border-right: 1px solid grey;
 	
-	color: #E4E4E4;
+	color: #E4E4E4 !important;
+	font-size:1em !important;
 	text-align: center;
-<<<<<<< HEAD
-	font-size:1em;
+	font-size:18px;
 	/*font-variant:small-caps;*/
 	
 	text-shadow: 0px;
-=======
-	font-size:18px;
-	font-variant:small-caps;
->>>>>>> parent of ac39a33... Fix jquery page requests
 }
 
 .ActivePage {
 	background-color: grey;
 	
-	font-size:1em;
+	font-weight: 700;
 }
 
 .AppLogo{
 	float: left;
 	display: inline-block;
-	margin: 0em 1em;
+	margin: -.25em 1em;
 	padding: 5px 0px;
 	
 	/*font-variant:small-caps;*/
@@ -96,22 +107,26 @@ table{
 }
 
 .TopIcon{
+	color: black !important;
+	
 	float: right;
 	display: inline-block;
 	margin: 0 1em;
-	padding: 10px 0px;
-	
+	padding: 5px 0;
+	padding-bottom: 5px;
 	width: 55px;
 	
 	border-left: 0px;
 }
 
 .MapCanvas{
-	margin-top: 10px;
+	margin-top: 0px;
 	margin-bottom: 10px;
 	width:100%;
-	height: 550px;
+	height: 450px;
 }
+
+
 
 
 

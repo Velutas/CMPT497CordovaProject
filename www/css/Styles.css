@@ -12,7 +12,6 @@ h1 {
 	display: inline-block;
 	
 	padding:0;
-	padding-top: .1em;
 	margin: 0;
 	
 	font-size:1.5em;
@@ -24,9 +23,13 @@ p{
 }
 
 a{
+	padding: 20px;
+	
+	
 	color: #E4E4E4 !important;
 	font-size:1em !important;
 	text-decoration: none !important;
+	
 	background-color: transparent !important;
 	border-color: transparent !important;
 }
@@ -38,9 +41,9 @@ a{
 table{
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 0px;
+	margin-top: 6px
 	
-	height: .5em !important;
+	height: 1em;
 	width: 100%;
 	
 	background-color:#333333;
@@ -49,7 +52,7 @@ table{
 
 .NavButton {
 	background-color:#333333;
-	padding: 0px 0px;
+	padding: 10px 0px;
 	width: 33%;
 	
 	border-right: 1px solid grey;
@@ -57,25 +60,23 @@ table{
 	color: #E4E4E4 !important;
 	font-size:1em !important;
 	text-align: center;
-	font-size:1em;
-	/*font-variant:small-caps;*/
+	font-size:18px;
+	font-variant:small-caps;
 	
 	text-shadow: 0px;
 }
 
 .ActivePage {
 	background-color: grey;
-	
-	font-size:1em;
 }
 
 .AppLogo{
 	float: left;
 	display: inline-block;
-	margin: 0em 1em;
+	margin: -.2em 1em;
 	padding: 5px 0px;
 	
-	/*font-variant:small-caps;*/
+	font-variant:small-caps;
 	color: #E4E4E4;
 	font-size:1.25em;
 	
@@ -90,7 +91,6 @@ table{
 	float: right;
 	display: inline-block;
 	margin: 0 1em;
-	padding: 10px 0px;
 	
 	width: 55px;
 	
