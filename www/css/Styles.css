@@ -11,7 +11,8 @@ h1 {
     overflow:visible;
 	display: inline-block;
 	
-	padding:0;
+	padding: 0;
+	padding-top: .28em;
 	margin: 0;
 	
 	font-size:1.5em;
@@ -23,16 +24,16 @@ p{
 }
 
 a{
-	padding: 20px;
-	
-	
-	color: #E4E4E4 !important;
-	font-size:1em !important;
-	text-decoration: none !important;
+	color: #E4E4E4;
+	font-size:1em;
+	text-decoration: none;
+	text-shadow: none;
 	
 	background-color: transparent !important;
 	border-color: transparent !important;
+	
 }
+
 
 .Testing{
 	color: red;
@@ -41,7 +42,7 @@ a{
 table{
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 6px
+	margin-top: 6px;
 	
 	height: 1em;
 	width: 100%;
@@ -52,18 +53,19 @@ table{
 
 .NavButton {
 	background-color:#333333;
-	padding: 10px 0px;
+	padding: 0px 0px;
 	width: 33%;
 	
 	border-right: 1px solid grey;
 	
-	color: #E4E4E4 !important;
-	font-size:1em !important;
+	color: #E4E4E4;
+	font-size:.8em;
 	text-align: center;
 	font-size:18px;
-	font-variant:small-caps;
+	font-weight: 700;
+	/*font-variant:small-caps;*/
 	
-	text-shadow: 0px;
+	text-shadow: none;
 }
 
 .ActivePage {
@@ -74,7 +76,7 @@ table{
 	float: left;
 	display: inline-block;
 	margin: -.2em 1em;
-	padding: 5px 0px;
+	padding: .5em 0;
 	
 	font-variant:small-caps;
 	color: #E4E4E4;
@@ -86,10 +88,11 @@ table{
 }
 
 .TopIcon{
-	color: black !important;
+	color: black;
 	
 	float: right;
 	display: inline-block;
+	padding-top: .8em;
 	margin: 0 1em;
 	
 	width: 55px;
