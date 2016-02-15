@@ -1,49 +1,51 @@
 var map
-/*
-document.onload = function{
-	Location = map.getMyLocation(GPS, onSuccess, onError);
-	alert(Location);
-	
-	var GOOGLE = new plugin.google.maps.LatLng(37.422858, -122.085065);
-	
-	map.setCenter(GOOGLE);
-	map.setZoom(15);
-}
-*/
-
 var GPS = {
 	enableHighAccuracy: true
 };
 
-function onSuccess(Location){
-	alert("Success");
-}
-function onError(Location){
-	alert("Error");
-}
-
-
+/* Main function */
 document.addEventListener("deviceready", function(){
 		var div = document.getElementById("MapCanvas");
+		
+		/* Using set location of Vancouver for now, since data on events is 
+			currently specific to the Vancouver area.*/
+		var City = new plugin.google.maps.LatLng(49.2827, -123.1207);
+		
 		map = plugin.google.maps.Map.getMap(div);
 		
-		Location = map.getMyLocation(GPS, onSuccess(Location), onError);
-	
+		// Get location of user => Need to build onSuccess and onError 
+		/*
+		map.getMyLocation(opts, onSuccess, onError);
+		*/
+		
+		/* Re-enable map after navigating away */
+		map.setVisible(true);
+		
+		/* Enable button to make map full screen */
 		map.addEventListener(plugin.google.maps.event.MAP_READY, MapReady);
-    }, false);
+		
+		/* Set starting location and zoom level for map */ 
+		map.addEventListener(plugin.google.maps.event.MAP_READY, function(){
+			map.setCenter(City);
+			map.setZoom(13);
+		});
+		
+}, false);
 
+
+/* Function for making map full screen */ 
 function MapReady(){
     var button = document.getElementById("MapFullScreen");
-	
     button.addEventListener("click", onBtnClicked, false);
 }
 
+/* Enable map to be minimized and maximixed on click */ 
 function onBtnClicked(){
     map.showDialog();
 }
 
-
+/* Prevent map from displaying on additional pages */ 
 function CloseMap(){
-	//map.setVisible(false);
-	map.remove();
+	map.setVisible(false);
+	//map.remove();
 }

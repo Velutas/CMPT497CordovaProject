@@ -2,39 +2,61 @@
 
 <html>
     <head>
-		<title>Nearest</title>
-		<meta charset="utf-8">
-        
-		<!--Added for cordova-jquery-->
-		<meta http-equiv="Content-Security-Policy" content="default-src &apos;self&apos; data: gap: https://ssl.gstatic.com &apos;unsafe-eval&apos;; style-src &apos;self&apos; &apos;unsafe-inline&apos;; media-src *">
-		<meta name="format-detection" content="telephone=no">
+		<title>Index</title>
+		<meta charset="UTF-8">
+		
+        <meta http-equiv="Content-Security-Policy" content="default-src &apos;self&apos; data: gap: https://ssl.gstatic.com &apos;unsafe-eval&apos;; style-src &apos;self&apos; &apos;unsafe-inline&apos;; media-src *">
+        <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
         
-		
-		<!--Added for cordova-jquery-->
-		<!--<link rel="stylesheet" type="text/css" href="css/jquery-1.5.0.mobile.min.css">-->
-		<link rel="stylesheet" type="text/css" href="css/jquery-1.5.0.mobile.min.css">
+		<link rel="stylesheet" type="text/css" href="js/jquery-1.5.0.mobile.min.css">
 		<link rel="stylesheet" type="text/css" href="css/Styles.css">
-	
-		<!--Added for cordova-jquery-->
-		<!--<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>-->
-		<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
-        <script type="text/javascript" src="js/jquery-1.5.0.mobile.min.js"></script>
 		
 		<script type="text/javascript" src="cordova.js"></script>
-		<script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/jquery-1.11.1.min.js" id="cordova-jquery"></script>
+		<script type="text/javascript" id="jqm-trans-disable">
+		/* For having a faster transition */
+		$(document).on("mobileinit", function() {
+				$.mobile.defaultPageTransition = "none";
+				$.mobile.defaultDialogTransition = "none";
+		});
+		</script>
+        <script type="text/javascript" src="js/jquery-1.5.0.mobile.min.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+		
+		<!-- Init data on page -->
 		<script type="text/javascript" src="js/BuildLists.js"></script>
 		
-
-        
+		<!-- Testing Map Move -->
+		<script type="text/javascript" src="js/Map.js"></script>
+		
+		<!-- Load data NOTE: Need to change to GET-->
+		<script type="text/javascript">
+			$(document).on("pagecreate", function() {
+				<!-- Fire on load
+				$("#verify").load("data/testdata.json", function(data, status){
+					alert("Data: " + data + "\nStatus: " + status);
+				});
+				
+				<!-- Fire on click
+				$("#verify").on( "tap", function() {
+					<!-- alert("Okay");
+					<!-- Must specify button -->
+					$("#verify").load("data/testdata.json", function(data, status){
+						alert("Data: " + data + "\nStatus: " + status);
+					});
+				});
+			});
+		</script>
+		
+		
     </head>
 	
-    <body>	
-		<!--Experimental-->
+    <body>
+		<!-- List by Distance -->
 		<div data-role="page" id="Nearest">
 			<div data-role="header">
-<<<<<<< HEAD
 				<div data-role="navbar">
 					<h1>Nearby Action</h1>
 					<img class="AppLogo" src="img/AppLogo.png" alt="LOGO">
@@ -49,32 +71,31 @@
 						<a href="Map.html" rel="external">Map View</a>
 					</td></tr></table>
 				</div>
-=======
-				<h1>Nearest Attractions</h1>
-				<img class="AppLogo" src="img/AppLogo.png" alt="LOGO">
-				<a class="NavButton TopIcon" href="#About" data-prefetch="true">About</a>
-				<table><tr><td class="NavButton ActivePage">
-					List All</td>
-					<td class="NavButton">
-					<a href="#Categories" data-prefetch="true">Categories</a></td>
-					<td class="NavButton">
-					<a href="Map.html" rel="external">Map View</a>
-				</td></tr></table>
->>>>>>> parent of ac39a33... Fix jquery page requests
 			</div>
 			
-			<div data-role="main">
+			<div class="ui-content">
+			
+			
 				<div id="EventList" class="Testing">List</div>
 				<p>
 				<a class="Testing" href="http://ec2-54-218-45-124.us-west-2.compute.amazonaws.com/"  rel="external">Database Test</a>
 				</p>
-				<a href="data/testdata.json" rel="external">Send Request</a><button>Send an HTTP GET request to a page and get the result back</button>
+				<a href="data/testdata.json" rel="external">Send Request</a>
+				
+				
+				<input type="button" id="verify" data-iconpos="right" data-theme="a" value="Testing a button..." />
+				
+	
+			</div>
+			
+			<div data-role="footer" data-position="fixed">
+				<h1>Footer test</h1>
 			</div>
 		</div>
-		
+
+		<!-- Sort by Categories -->
 		<div data-role="page" id="Categories">
 			<div data-role="header">
-<<<<<<< HEAD
 				<div data-role="navbar">
 					<h1>By Category</h1>
 					<img class="AppLogo" src = "img/AppLogo.png" alt="LOGO">
@@ -88,35 +109,49 @@
 						<a href="Map.html" rel="external">Map View</a>
 					</td></tr></table>
 				</div>	
-=======
-				<h1>By Category</h1>
-				<img class="AppLogo" src = "img/AppLogo.png" alt="LOGO">
-				<a class="NavButton TopIcon" href="#About data-prefetch="true"">About</a>
-				
-				
-				<table><tr><td class="NavButton">
-					<a href="#Nearest" data-prefetch="true">List All</a>
-					</td><td class="NavButton ActivePage">
-					Categories
-					</td><td class="NavButton">
-					<a href="Map.html" rel="external">Map View</a>
-				</td></tr></table>
-				
->>>>>>> parent of ac39a33... Fix jquery page requests
 			</div>
 			
-			<div data-role="main" class="ui-content">
-				
+			<div class="ui-content">
 				<div id="EventList" class="Testing">List</div>
 				
 				<a href="data/testdata.json">Send Request</a>
-				<button>Send an HTTP GET request to a page and get the result back</button>
+			</div>
+			
+			<div data-role="footer" data-position="fixed">
+				<h1>Footer</h1>
 			</div>
 		</div>
 		
+		<!-- Check if map will work in this div -->
+		<div data-role="page" id="Map">
+			<div data-role="header">				
+				<div data-role="navbar">
+					<h1>Map View</h1>
+					<img class="AppLogo" src = "img/AppLogo.png" alt="LOGO">
+					<a class="NavButton TopIcon" href="Index.html#About">About</a>
+								
+					<table><tr><td class="NavButton">
+						<a href="#Nearest" onClick="CloseMap();">List All</a>
+						</td><td class="NavButton">
+						<a href="#Categories" onClick="CloseMap();">Categories</a>
+						</td><td class="NavButton ActivePage">
+						Map View
+					</td></tr></table>
+				</div>
+			</div>
+			
+			<div class="ui-content">
+				<!-- Display lots -->
+				<div class="MapCanvas" id="MapCanvas"></div>
+			</div>
+			
+			<div data-role="footer" data-position="fixed" align="center">
+				<button id="MapFullScreen">Full Screen</button>
+			</div>
+		</div>
 		
+		<!-- About this app page, change later -->
 		<div data-role="page" id="About">
-<<<<<<< HEAD
 			<div data-role="header">				
 				<div data-role="navbar">
 					<h1>About App</h1>
@@ -135,29 +170,11 @@
 			
 			<div class="ui-content">
 				<p>About goes in this section</p>
-=======
-			<div data-role="header">
-				<h1>About App</h1>
-				<img class="AppLogo" src = "img/AppLogo.png" alt="LOGO">
-				<a class="NavButton TopIcon" href="#About" data-prefetch="true">About</a>
-				
-				<table><tr><td class="NavButton">
-					<a href="#Nearest" data-prefetch="true">List All</a>
-					</td><td class="NavButton">
-					<a href="#Categories" data-prefetch="true">Categories</a>
-					</td><td class="NavButton">
-					<a href="Map.html" rel="external">Map View</a>
-				</td></tr></table>
->>>>>>> parent of ac39a33... Fix jquery page requests
 			</div>
 			
-			<div data-role="main" class="ui-content">
-				
-				Content goes here
-				
+			<div data-role="footer" data-position="fixed">
+				<h1>I don't think this page acutally needs a footer...</h1>
 			</div>
 		</div>
-		
 	</body>
-	
 </html>

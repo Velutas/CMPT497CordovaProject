@@ -14,7 +14,17 @@
     <feature name="Geocoder">
         <param name="android-package" value="plugin.google.maps.MyGeocoder" />
     </feature>
+    <preference name="SplashScreen" value="screen" />
+    <preference name="SplashScreenDelay" value="10000" />
     <allow-intent href="market:*" />
+    <splash density="land-hdpi" src="res/screen/android/HDPI_SPLASHLAND.png" />
+    <splash density="land-ldpi" src="res/screen/android/LDPI_SPLASHLAND.png" />
+    <splash density="land-mdpi" src="res/screen/android/MDPI_SPLASHLAND.png" />
+    <splash density="land-xhdpi" src="res/screen/android/XHDPI_SPLASHLAND.png" />
+    <splash density="port-hdpi" src="res/screen/android/HDPI_SPLASH.png" />
+    <splash density="port-ldpi" src="res/screen/android/LDPI_SPLASH.png" />
+    <splash density="port-mdpi" src="res/screen/android/MDPI_SPLASH.png" />
+    <splash density="port-xhdpi" src="res/screen/android/XHDPI_SPLASH.png" />
     <name>SideTracked</name>
     <description>
         A sample Apache Cordova application that responds to the deviceready event.

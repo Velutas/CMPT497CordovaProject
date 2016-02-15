@@ -40,6 +40,7 @@ h1 {
 	padding:0;
 	margin: 0 0 5px 0;
 	
+	color: #333333;
 	font-size:1.5em;
 	font-variant:small-caps;
 }
@@ -50,13 +51,19 @@ p{
 
 a{
 	color: #E4E4E4 !important;
-	font-size:1.2em !important;
+	font-size:1em !important;
 	text-decoration: none !important;
+	font-weight: 700;
+	
+	
 	background-color: transparent !important;
 	border-color: transparent !important;
-	font-weight: 700;
 }
 
+ui-link{
+	margin:0;
+	
+}
 
 table{
 	margin-left: auto;
@@ -107,7 +114,7 @@ table{
 }
 
 .TopIcon{
-	color: black !important;
+	color: #333333 !important;
 	
 	float: right;
 	display: inline-block;
