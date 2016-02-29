@@ -10,7 +10,7 @@ document.addEventListener("deviceready", function(){
 		/* Using set location of Vancouver for now, since data on events is 
 			currently specific to the Vancouver area.*/
 		var City = new plugin.google.maps.LatLng(49.2827, -123.1207);
-		
+		//alert("Data: ");
 		map = plugin.google.maps.Map.getMap(div);
 		
 		// Get location of user => Need to build onSuccess and onError 

@@ -3,6 +3,9 @@
 }
 
 body {
+	background-image: url("img/BG.png");
+    background-color: #333333;
+	
     -webkit-touch-callout: none; 
 	margin: 0px;
 	margin-top: 0px;
