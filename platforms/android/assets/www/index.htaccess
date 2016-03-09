@@ -1,0 +1,8 @@
+Access-Control-Allow-Origin: https://mjdgbkaht5.execute-api.us-west-2.amazonaws.com/Beta
+Access-Control-Max-Age: 3628800
+
+<FilesMatch "\.(ttf|otf|eot|woff)$">
+  <IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "*"
+  </IfModule>
+</FilesMatch>
