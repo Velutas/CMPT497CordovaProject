@@ -1,23 +1,5 @@
 //Modified from http://www.w3schools.com/json/json_example.asp
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-$('#Nearest').live('pagecreate', function() {
-	// Set this to the location on the AWS server where the JSON file is stored 
-=======
-$('#Nearest').live('pagecreate', function() {
-	/* Set this to the location on the AWS server where the JSON file is stored */
->>>>>>> parent of 6cb5e85... Try to fix json get
-	var xmlhttp = new XMLHttpRequest();
-	var url = "data/AllEvents.json";
-
-	/* Request json */
-	xmlhttp.onreadystatechange=function() {
-		if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-			myFunction(xmlhttp.responseText);
-		}
-=======
 /* Set this to the location on the AWS server where the JSON file is stored */
 var xmlhttp = new XMLHttpRequest();
 var url = "data/testdata.json";
@@ -26,7 +8,6 @@ var url = "data/testdata.json";
 xmlhttp.onreadystatechange=function() {
 	if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
 		myFunction(xmlhttp.responseText);
->>>>>>> parent of 5956bc1... Fix GET and List
 	}
 }
 xmlhttp.open("GET", url, true);

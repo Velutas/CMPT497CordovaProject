@@ -1,4 +1,10 @@
 body {
+	background-image: url("img/BG.png");
+    background-repeat:repeat-y;
+    background-position:center center;
+    background-attachment:scroll;
+    background-size:100% 100%;
+	
     -webkit-touch-callout: none; 
 	margin: 0px;
 	margin-top: 8px;
@@ -8,6 +14,8 @@ body {
 }
 
 h1 {
+	color:#E4E4E4;
+	
     overflow:visible;
 	display: inline-block;
 	
@@ -33,10 +41,51 @@ a{
 	border-color: transparent !important;
 	
 }
+footer {
+	background-color: #003300;
+	
+	text-align: center;
+	position: fixed;
+	width: 100%;
+	bottom:0;
+	
+	padding: .7em;
+}
 
+footer button{
+	text-align: center;
+	font-weight: 700;
+	
+	border: 0;
+	background-color: transparent;
+}
 
 .Testing{
 	color: red;
+}
+
+
+#Nearest{
+	background: url("img/BG.png");
+	background-color: #333333;
+}
+
+#Categories{
+	background: url("img/BG.png");
+    background-color: #333333;
+}
+
+#About{
+	background: url("img/BG.png");
+    background-color: #333333;
+}
+
+.ui-header{
+	background-color: #003300;
+}
+
+.ui-footer{
+	background-color: #003300;
 }
 
 table{
@@ -88,7 +137,7 @@ table{
 }
 
 .TopIcon{
-	color: black;
+	color: #E4E4E4;
 	
 	float: right;
 	display: inline-block;
@@ -108,4 +157,17 @@ table{
 }
 
 
+/*Negate jquerycss*/
+.ui-page {
+    background: transparent;
+}
+.ui-content{
+    background: transparent;
+}
 
+.ui-page.ui-body-c {
+    background: url("img/BG.png");
+    background-repeat:no-repeat;
+    background-position:center center;
+    background-size:cover;  
+}
