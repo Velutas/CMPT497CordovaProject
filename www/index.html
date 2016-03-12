@@ -31,26 +31,6 @@
 		<!-- Testing Map Move -->
 		<script type="text/javascript" src="js/Map.js"></script>
 		
-		<!-- Load data NOTE: Need to change to GET-->
-		<script type="text/javascript">
-			$(document).on("pagecreate", function() {
-				<!-- Fire on load
-				$("#verify").load("data/testdata.json", function(data, status){
-					alert("Data: " + data + "\nStatus: " + status);
-				});
-				
-				<!-- Fire on click
-				$("#verify").on( "tap", function() {
-					<!-- alert("Okay");
-					<!-- Must specify button -->
-					$("#verify").load("data/testdata.json", function(data, status){
-						alert("Data: " + data + "\nStatus: " + status);
-					});
-				});
-			});
-		</script>
-		
-		
     </head>
 	
     <body>
@@ -78,14 +58,10 @@
 			
 				<div id="EventList" class="Testing">List</div>
 				<p>
-				<a class="Testing" href="http://ec2-54-218-45-124.us-west-2.compute.amazonaws.com/"  rel="external">Database Test</a>
+				<a class="Testing" href="https://mjdgbkaht5.execute-api.us-west-2.amazonaws.com/SideTracked"  rel="external">Database Test</a>
 				</p>
 				<a href="data/testdata.json" rel="external">Send Request</a>
 				
-				
-				<input type="button" id="verify" data-iconpos="right" data-theme="a" value="Testing a button..." />
-				
-	
 			</div>
 			
 			<div data-role="footer" data-position="fixed">
