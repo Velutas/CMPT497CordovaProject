@@ -1,7 +1,7 @@
 //Modified from http://www.w3schools.com/json/json_example.asp
 
 
-  $('#Nearest').live('pagecreate', function() {
+$('#Nearest').live('pagecreate', function() {
 	// Set this to the location on the AWS server where the JSON file is stored 
 	var xmlhttp = new XMLHttpRequest();
 	var url = "https://mjdgbkaht5.execute-api.us-west-2.amazonaws.com/Beta";
