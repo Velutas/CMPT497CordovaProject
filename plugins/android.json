@@ -16,15 +16,6 @@
         },
         "cordova-plugin-geolocation": {
             "PACKAGE_NAME": "com.Simone.SideTracked"
-        },
-        "cordova-plugin-splashscreen": {
-            "PACKAGE_NAME": "com.Simone.SideTracked"
-        },
-        "cordova-plugin-file-transfer": {
-            "PACKAGE_NAME": "com.Simone.SideTracked"
-        },
-        "cordova-plugin-file": {
-            "PACKAGE_NAME": "com.Simone.SideTracked"
         }
     },
     "dependent_plugins": {}

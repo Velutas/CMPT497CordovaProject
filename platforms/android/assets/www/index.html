@@ -30,9 +30,7 @@
 =======
 >>>>>>> parent of 6cb5e85... Try to fix json get
 		<script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/jquery-1.6.4.min.js"></script> 
-		<script type="text/javascript" src="js/jquery.mobile-1.0.min.js"></script> 
-		
+        <script type="text/javascript" src="js/jquery-1.11.1.min.js" id="cordova-jquery"></script>
 		<script type="text/javascript" id="jqm-trans-disable">
 		/* For having a faster transition */
 		$(document).on("mobileinit", function() {
@@ -40,24 +38,34 @@
 				$.mobile.defaultDialogTransition = "none";
 		});
 		</script>
+        <script type="text/javascript" src="js/jquery-1.5.0.mobile.min.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
 		
 		<!-- Init data on page -->
 		<script type="text/javascript" src="js/BuildLists.js"></script>
 		
+		<!-- Testing Map Move -->
+		<script type="text/javascript" src="js/Map.js"></script>
+		
 		<!-- Load data NOTE: Need to change to GET-->
-		<!--
 		<script type="text/javascript">
-			$('#Nearest').live('pagecreate', function() {
+			$(document).on("pagecreate", function() {
 				<!-- Fire on load
-				$("#EventList").load("data/testdata.json", function(data, status){
+				$("#verify").load("data/testdata.json", function(data, status){
 					alert("Data: " + data + "\nStatus: " + status);
 				});
+				
+				<!-- Fire on click
+				$("#verify").on( "tap", function() {
+					<!-- alert("Okay");
+					<!-- Must specify button -->
+					$("#verify").load("data/testdata.json", function(data, status){
+						alert("Data: " + data + "\nStatus: " + status);
+					});
+				});
 			});
-		
 		</script>
 		
-		-->
 		
     </head>
 	
@@ -86,18 +94,19 @@
 			
 				<div id="EventList" class="Testing">List</div>
 				<p>
-				<a class="Testing" href="http://ec2-54-218-45-124.us-west-2.compute.amazonaws.com/Vicinity.json"  rel="external">Database Test</a>
+				<a class="Testing" href="http://ec2-54-218-45-124.us-west-2.compute.amazonaws.com/"  rel="external">Database Test</a>
 				</p>
+				<a href="data/testdata.json" rel="external">Send Request</a>
 				
-				<a href="Testing.html" rel="external">Testing</a>
 				
+				<input type="button" id="verify" data-iconpos="right" data-theme="a" value="Testing a button..." />
 				
 	
 			</div>
 			
-			<footer>
+			<div data-role="footer" data-position="fixed">
 				<h1>Footer test</h1>
-			</footer>
+			</div>
 		</div>
 
 		<!-- Sort by Categories -->
@@ -124,9 +133,9 @@
 				<a href="data/testdata.json">Send Request</a>
 			</div>
 			
-			<footer>
-				<h1>Footer test</h1>
-			</footer>
+			<div data-role="footer" data-position="fixed">
+				<h1>Footer</h1>
+			</div>
 		</div>
 		
 		<!-- Check if map will work in this div -->
@@ -179,9 +188,9 @@
 				<p>About goes in this section</p>
 			</div>
 			
-			<footer>
-				<h1>Footer test</h1>
-			</footer>
+			<div data-role="footer" data-position="fixed">
+				<h1>I don't think this page acutally needs a footer...</h1>
+			</div>
 		</div>
 	</body>
 </html>
