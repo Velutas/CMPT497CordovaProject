@@ -1,39 +1,82 @@
-//Modified from http://www.w3schools.com/json/json_example.asp
-
-
 $(document).on('pagecreate', '#Nearest', function() {
-	// Set this to the location on the AWS server where the JSON file is stored 
-	//alert("AUGH WHY DID THEY REMOVE LIVE?!?!?");
-	var xmlhttp = new XMLHttpRequest();
 	var url = "data/testdata.json";
-	//var url = "data/AllEvents.json";
-	
-	// Request json 
-	xmlhttp.onreadystatechange=function() {
-		//alert(xmlhttp.status);
-		if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-			myFunction(xmlhttp.responseText);
-		}
-	}
-	xmlhttp.open("GET", url, true);
-	xmlhttp.send();
+	//var url = "https://mjdgbkaht5.execute-api.us-west-2.amazonaws.com/SideTracked";
 
-	// Convert JSON to HTML 
-	function myFunction(response) {
-		var arr = JSON.parse(response);
-		var out = "<table>"; 
+	//Have server only return nearby locations
+	$.getJSON(url, {get_param: 'value' }, function( data ){ 
+		var Nearby = "<table>"; 
+		Nearby += "<tr><td> <h2>Event</h2> </td><td> <h2>Location</h2> </td><td> <h2>Time</h2> </td></tr>";
 		
-		out += "<tr><td> Event </td><td> Location </td><td> Time </td></tr>";
-		
-		for(var i = 0; i < arr.length; i++) {
-			out += "<tr><td>" + arr[i].Name +
-			"</td><td>" + arr[i].Location +
-			"</td><td>" + arr[i].Time +
+		$.each(data, function(index, element) {
+			Nearby += "<tr><td>" + element.Name +
+			"</td><td>" + element.Location +
+			"</td><td>" + element.Time +
 			"</td></tr>";
-		}
-		out += "</table>";
+		});
+		
+		Nearby += "</table>";
+		document.getElementById("EventList").innerHTML = Nearby;
+	});
+});
 
-		// To Do: Fix bug where table doesn't display on the initial load 
-		document.getElementById("EventList").innerHTML = out;
-	}
+
+$(document).on('pagecreate', '#Categories', function() {
+	//$(function() {
+	//	$("CategoryList").accordion();
+	//}
+	
+	var url = "data/testdata2.json";
+	//var url = "https://mjdgbkaht5.execute-api.us-west-2.amazonaws.com/SideTracked";
+	
+	$.getJSON(url, {get_param: 'value' }, function( data ){
+		var Activities = "<table class='Activities' > <tr><td> <h2>Event</h2> </td><td> <h2>Location</h2> </td><td> <h2>Time</h2> </td></tr>";
+		var Arts = "<table> <tr><td> <h2>Event</h2> </td><td> <h2>Location</h2> </td><td> <h2>Time</h2> </td></tr>";
+		var FoodDrink = "<table> <tr><td> <h2>Event</h2> </td><td> <h2>Location</h2> </td><td> <h2>Time</h2> </td></tr>";
+		var Music = "<table> <tr><td> <h2>Event</h2> </td><td> <h2>Location</h2> </td><td> <h2>Time</h2> </td></tr>";
+		var Other = "<table> <tr><td> <h2>Event</h2> </td><td> <h2>Location</h2> </td><td> <h2>Time</h2> </td></tr>";
+		
+		$.each(data, function(index, element) {
+			if(element.Category == "Activities"){
+				Activities += "<tr><td>" + element.Name +
+				"</td><td>" + element.Location +
+				"</td><td>" + element.Time +
+				"</td></tr>";
+			}
+			if(element.Category == "Arts"){
+				Arts += "<tr><td>" + element.Name +
+				"</td><td>" + element.Location +
+				"</td><td>" + element.Time +
+				"</td></tr>";
+			}
+			if(element.Category == "Food & Drink"){
+				FoodDrink += "<tr><td>" + element.Name +
+				"</td><td>" + element.Location +
+				"</td><td>" + element.Time +
+				"</td></tr>";
+			}
+			if(element.Category == "Music"){
+				Music += "<tr><td>" + element.Name +
+				"</td><td>" + element.Location +
+				"</td><td>" + element.Time +
+				"</td></tr>";
+			}
+			if(element.Category == "Other"){
+				Other += "<tr><td>" + element.Name +
+				"</td><td>" + element.Location +
+				"</td><td>" + element.Time +
+				"</td></tr>";
+			}
+		});
+		Activities += "</table>";
+		Arts += "</table>";
+		FoodDrink += "</table>";
+		Music += "</table>";
+		Other += "</table>";
+
+		$('.Activities').append(Activities);
+		$('.Arts').append(Arts);
+		$('.FoodDrink').append(FoodDrink);
+		$('.Music').append(Music);
+		$('.Other').append(Other);
+	});
 });

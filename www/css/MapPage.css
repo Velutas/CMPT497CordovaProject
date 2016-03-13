@@ -1,11 +1,230 @@
+
+body {
+	/*background-image: url("../img/BG.png");*/
+    background-repeat:repeat-y;
+    background-position:center center;
+    background-attachment:scroll;
+    background-size:100% 100%;
+	
+    -webkit-touch-callout: none; 
+	margin: 0px;
+	margin-top: 8px;
+	
+	font-family: Helvetica;
+    font-size:1em;
+}
+
+
+h1 {
+	outline: none;
+	color:#E4E4E4;
+	
+    overflow:visible;
+	display: inline-block;
+	
+	padding: 0;
+	padding-top: .28em;
+	margin: 0;
+	
+	font-size:1.5em;
+	font-variant:small-caps;
+}
+
+h2 {
+	outline: none;
+	color:#E4E4E4;
+	
+    overflow:visible;
+	display: inline-block;
+	
+	padding: 0;
+	padding-top: .28em;
+	margin: 0;
+	
+	font-size:1.1em;
+	font-variant:small-caps;
+}
+
+h3 {
+	outline: none;
+	color: black;
+	
+}
+
+
+p{
+	text-align: justify;
+}
+
+a:link, a:visited, a:active, a:hover {
+	color: #E4E4E4;
+	font-size:1em;
+	text-decoration: none;
+	text-shadow: none;
+	
+	background-color: transparent !important;
+	border-color: transparent !important;
+	
+}
+footer {
+	/*background-color: #003300;*/
+	
+	text-align: center;
+	position: fixed;
+	width: 100%;
+	bottom:0;
+	
+	padding: .7em;
+}
+
+footer button{
+	text-align: center;
+	font-weight: 700;
+	
+	border: 0;
+	background-color: transparent;
+}
+
 .Testing{
 	color: red;
 }
 
-body {
-	background-image: url("img/BG.png");
-    background-color: #333333;
+
+#Nearest{
+}
+
+#Categories{
+}
+
+#About{
+}
+
+.ui-header{
+	/*background-color: #003300;*/
+}
+
+.ui-footer{
+	/*background-color: #003300;*/
+}
+
+table{
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 6px;
 	
+	height: 1em;
+	width: 100%;
+	
+	/*background-color:#333333;*/
+	
+	border-collapse: collapse;
+}
+
+.ListBuild table{
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 6px;
+	
+	width: 98%;
+	
+	border-collapse: collapse;
+}
+
+.ListBuild td:nth-child(1){width:50%;}
+.ListBuild td:nth-child(2){width:30%;}
+.ListBuild td:nth-child(3){width:10%;}
+
+.Activities {
+	/*color: blue;*/
+}
+
+.NavButton {
+	/*background-color:#333333;*/
+	padding: 0px 0px;
+	width: 33%;
+	
+	border-right: 1px solid grey;
+	
+	color: #E4E4E4;
+	font-size:.8em;
+	text-align: center;
+	font-size:18px;
+	font-weight: 700;
+	/*font-variant:small-caps;*/
+	
+	text-shadow: none;
+}
+
+.ActivePage {
+	/*background-color: grey;*/
+}
+
+.AppLogo{
+	float: left;
+	display: inline-block;
+	margin: -.2em 1em;
+	padding: .5em 0;
+	
+	font-variant:small-caps;
+	color: #E4E4E4;
+	font-size:1.25em;
+	
+	width: 30px;
+	
+	/*background-image: url('../img/AppLogo.png'); */
+}
+
+.TopIcon{
+	color: #E4E4E4;
+	
+	float: right;
+	display: inline-block;
+	padding-top: .8em;
+	margin: 0 1em;
+	
+	width: 55px;
+	
+	border-left: 0px;
+}
+
+.MapCanvas{
+	margin-top: 10px;
+	margin-bottom: 10px;
+	width:100%;
+	height: 450px;
+}
+
+
+/*Negate jquerycss*/
+.ui-page {
+    background: transparent;
+}
+.ui-content{
+    background: transparent;
+}
+
+.ui-page.ui-body-c {
+    /*background: url("../img/BG.png");*/
+    background-repeat:no-repeat;
+    background-position:center center;
+    background-size:cover;  
+}
+
+.ui-collapsible-themed-content .ui-collapsable-set{
+	border: 0;
+	border-collapse: collapse;
+}
+
+.ui-accordion-header-active {
+	outline: none;
+    border-bottom: none;
+}
+
+/*.Testing{
+	color: red;
+}
+
+body {
     -webkit-touch-callout: none; 
 	margin: 0px;
 	margin-top: 0px;
@@ -90,7 +309,7 @@ table{
 	font-size:1em !important;
 	text-align: center;
 	font-size:18px;
-	/*font-variant:small-caps;*/
+	/*font-variant:small-caps;
 	
 	text-shadow: 0px;
 }
@@ -107,13 +326,11 @@ table{
 	margin: -.25em 1em;
 	padding: 5px 0px;
 	
-	/*font-variant:small-caps;*/
+	/*font-variant:small-caps;
 	color: #E4E4E4;
 	font-size:1.25em;
 	
 	width: 30px;
-	
-	background-image: url('img/AppLogo.png'); 
 }
 
 .TopIcon{
@@ -135,7 +352,7 @@ table{
 	width:100%;
 	height: 450px;
 }
-
+*/
 
 
 

@@ -1,32 +1,90 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
-<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-<script>
-$(document).on("pagecreate",function(){
-  alert("pagecreate event fired - the page is created, but enhancement is not complete.")
-}); 
-</script>
-</head>
-<body>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Info windows</title>
+    <style>
+      html, body, #map-canvas {
+        height: 100%;
+        margin: 0px;
+        padding: 0px
+      }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
+    <script>
+var myItemsApp = angular.module('myItemsApp', []);
 
-<div data-role="page" id="pageone">
-  <div data-role="header">
-    <h1>Header Text</h1>
+myItemsApp.factory('itemsFactory', ['$http', function ($http) {
+var itemsFactory = {
+    itemDetails: function () {
+        return $http({
+                url: "pos.json",
+                method: "GET"
 
-  </div>
+            })
+            .then(function (response) {
+                return response.data;
+                console.log(response.data);
+            });
+    }
+};
+return itemsFactory;
 
-  <div data-role="main" class="ui-content">
-    <p>Content goes here</p>
-  </div>
+}]);
 
-  <div data-role="footer">
-    <h1>Footer Text</h1>
-  </div>
-</div> 
 
-</body>
+
+
+ myItemsApp.controller('ItemsController', ['$scope', 'itemsFactory', function ($scope, itemsFactory) {
+var promise = itemsFactory.itemDetails();
+
+promise.then(function (data) {
+    $scope.itemDetails = data;
+    console.log(data);
+});
+$scope.select = function (item) {
+    $scope.selected = item;
+};
+$scope.selected = {};
+
+$scope.selected.latitude;
+ }]);
+
+
+ myItemsApp.directive("myMaps", function ($timeout) {
+return {
+    restrict: 'E',
+    template: '<div></div>',
+    replace: true,
+    link: function (scope, element, attrs) {
+        scope.$watchCollection('selected', function () {
+            var lat = scope.selected.latitude;
+            var lon = scope.selected.longitude;
+
+            var myLatLng = new google.maps.LatLng(lat, lon);
+            var mapOptions = {
+                center: myLatLng,
+                zoom: 12,
+                myTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var map = new google.maps.Map(document.getElementById("map-canvas"),
+                mapOptions);
+            var marker = new google.maps.Marker({
+                position: myLatLng,
+                map: map,
+                title: "my town"
+            });
+            marker.setMap(map);
+        });
+
+    }
+};
+ });
+
+    </script>
+  </head>
+  <body>
+    <div id="map-canvas"></div>
+  </body>
 </html>

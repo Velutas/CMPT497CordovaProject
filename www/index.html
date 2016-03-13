@@ -14,7 +14,7 @@
 		<link rel="stylesheet" type="text/css" href="css/Styles.css">
 		
 		<script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/jquery-1.11.1.min.js" id="cordova-jquery"></script>
+        <script type="text/javascript" src="js/jquery-2.2.0.min.js" id="cordova-jquery"></script>
 		<script type="text/javascript" id="jqm-trans-disable">
 		/* For having a faster transition */
 		$(document).on("mobileinit", function() {
@@ -27,10 +27,7 @@
 		
 		<!-- Init data on page -->
 		<script type="text/javascript" src="js/BuildLists.js"></script>
-		
-		<!-- Testing Map Move -->
-		<script type="text/javascript" src="js/Map.js"></script>
-		
+			
     </head>
 	
     <body>
@@ -56,7 +53,7 @@
 			<div class="ui-content">
 			
 			
-				<div id="EventList" class="Testing">List</div>
+				<div id="EventList" class="ListBuild">List</div>
 				<p>
 				<a class="Testing" href="https://mjdgbkaht5.execute-api.us-west-2.amazonaws.com/SideTracked"  rel="external">Database Test</a>
 				</p>
@@ -79,7 +76,7 @@
 					
 					<table><tr><td class="NavButton">
 						<a href="#Nearest">List All</a>
-						</td><td class="NavButton ActivePage">
+						</td><td class='NavButton ActivePage'>
 						Categories
 						</td><td class="NavButton">
 						<a href="Map.html" rel="external">Map View</a>
@@ -88,9 +85,31 @@
 			</div>
 			
 			<div class="ui-content">
-				<div id="EventList" class="Testing">List</div>
-				
-				<a href="data/testdata.json">Send Request</a>
+				<div data-role="collapsible-set" data-theme="b" data-content-theme="d">
+					<div data-role="collapsible">
+						<h3>Activities</h3>
+						<div id="CategoryList" class="ListBuild Activities"></div>
+					</div>
+					<div data-role="collapsible">
+						<h3>Arts</h3>
+						<div id="CategoryList" class="ListBuild Arts"></div>
+					</div>
+					<div data-role="collapsible">
+						<h3>Food & Drink</h3>
+						<div id="CategoryList" class="ListBuild FoodDrink"></div>
+					</div>
+					<div data-role="collapsible">
+						<h3>Music</h3>
+						<div id="CategoryList" class="ListBuild Music"></div>
+					</div>
+					<div data-role="collapsible">
+						<h3>Other</h3>
+						<div id="CategoryList" class="ListBuild Other"></div>
+					</div>
+					
+				</div>
+			
+				<!-- <div id="CategoryList" class="ListBuild"></div> --> 
 			</div>
 			
 			<div data-role="footer" data-position="fixed">

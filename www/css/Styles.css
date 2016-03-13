@@ -1,5 +1,5 @@
 body {
-	background-image: url("img/BG.png");
+	background-image: url("../img/BG.png");
     background-repeat:repeat-y;
     background-position:center center;
     background-attachment:scroll;
@@ -13,7 +13,9 @@ body {
     font-size:1em;
 }
 
+
 h1 {
+	outline: none;
 	color:#E4E4E4;
 	
     overflow:visible;
@@ -27,11 +29,33 @@ h1 {
 	font-variant:small-caps;
 }
 
+h2 {
+	outline: none;
+	color:#E4E4E4;
+	
+    overflow:visible;
+	display: inline-block;
+	
+	padding: 0;
+	padding-top: .28em;
+	margin: 0;
+	
+	font-size:1.1em;
+	font-variant:small-caps;
+}
+
+h3 {
+	outline: none;
+	color: black;
+	
+}
+
+
 p{
 	text-align: justify;
 }
 
-a{
+a:link, a:visited, a:active, a:hover {
 	color: #E4E4E4;
 	font-size:1em;
 	text-decoration: none;
@@ -42,7 +66,7 @@ a{
 	
 }
 footer {
-	background-color: #003300;
+	/*background-color: #003300;*/
 	
 	text-align: center;
 	position: fixed;
@@ -66,26 +90,20 @@ footer button{
 
 
 #Nearest{
-	background: url("img/BG.png");
-	background-color: #333333;
 }
 
 #Categories{
-	background: url("img/BG.png");
-    background-color: #333333;
 }
 
 #About{
-	background: url("img/BG.png");
-    background-color: #333333;
 }
 
 .ui-header{
-	background-color: #003300;
+	/*background-color: #003300;*/
 }
 
 .ui-footer{
-	background-color: #003300;
+	/*background-color: #003300;*/
 }
 
 table{
@@ -96,12 +114,31 @@ table{
 	height: 1em;
 	width: 100%;
 	
-	background-color:#333333;
+	/*background-color:#333333;*/
+	
 	border-collapse: collapse;
 }
 
+.ListBuild table{
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 6px;
+	
+	width: 98%;
+	
+	border-collapse: collapse;
+}
+
+.ListBuild td:nth-child(1){width:50%;}
+.ListBuild td:nth-child(2){width:30%;}
+.ListBuild td:nth-child(3){width:10%;}
+
+.Activities {
+	/*color: blue;*/
+}
+
 .NavButton {
-	background-color:#333333;
+	/*background-color:#333333;*/
 	padding: 0px 0px;
 	width: 33%;
 	
@@ -118,7 +155,7 @@ table{
 }
 
 .ActivePage {
-	background-color: grey;
+	/*background-color: grey;*/
 }
 
 .AppLogo{
@@ -133,7 +170,7 @@ table{
 	
 	width: 30px;
 	
-	background-image: url('img/AppLogo.png'); 
+	/*background-image: url('../img/AppLogo.png'); */
 }
 
 .TopIcon{
@@ -166,8 +203,18 @@ table{
 }
 
 .ui-page.ui-body-c {
-    background: url("img/BG.png");
+    background: url("../img/BG.png");
     background-repeat:no-repeat;
     background-position:center center;
     background-size:cover;  
+}
+
+.ui-collapsible-themed-content .ui-collapsable-set{
+	border: 0;
+	border-collapse: collapse;
+}
+
+.ui-accordion-header-active {
+	outline: none;
+    border-bottom: none;
 }

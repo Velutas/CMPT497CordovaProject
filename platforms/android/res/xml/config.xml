@@ -43,5 +43,5 @@
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
     <icon src="res/icon/AppLogo.png" />
-    <preference name="SplashScreenDelay" value="10000" />
+    <preference name="SplashScreenDelay" value="5000" />
 </widget>

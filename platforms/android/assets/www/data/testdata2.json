@@ -1,0 +1,9 @@
+
+	[
+		{ "Category": "Arts", "Name" : "Painting", 	"Location" : "Yaletown", 	"Time" : "1:00" }, 
+		{ "Category": "Food & Drink", "Name" : "Cooking", 	"Location" : "Gastown", 	"Time" : "12:00" }, 
+		{ "Category": "Arts", "Name" : "Reading", 	"Location" : "Georgia St.", "Time" : "5:00" }, 
+		{ "Category": "Food & Drink", "Name" : "Free Food", "Location" : "Burrard", 	"Time" : "7:00" }, 
+		{ "Category": "Arts", "Name" : "Spanish Class", "Location" : "Hastings", "Time" : "23:00" }, 
+		{ "Category": "Activities", "Name" : "Skating", 	"Location" : "Whistler", 	"Time" : "18:00" } 
+	]
