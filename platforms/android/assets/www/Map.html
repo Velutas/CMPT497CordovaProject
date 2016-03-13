@@ -1,34 +1,50 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src &apos;self&apos; data: gap: https://ssl.gstatic.com &apos;unsafe-eval&apos;; style-src &apos;self&apos; &apos;unsafe-inline&apos;; media-src *">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+       
 	
 	<link rel="stylesheet" type="text/css" href="js/jquery-1.5.0.mobile.min.css">
 	<link rel="stylesheet" type="text/css" href="css/MapPage.css">
 	
+	
     <script type="text/javascript" src="cordova.js"></script>
-	<!-- <script type="text/javascript" src="js/jquery-2.2.0.min.js" id="cordova-jquery"></script> -->
+	<script type="text/javascript" src="js/jquery-2.2.0.min.js" id="cordova-jquery"></script>
+	<script type="text/javascript" id="jqm-trans-disable">
+		/* For having a faster transition */
+		$(document).on("mobileinit", function() {
+				$.mobile.defaultPageTransition = "none";
+				$.mobile.defaultDialogTransition = "none";
+		});
+	</script>
 	<script type="text/javascript" src="js/jquery-1.5.0.mobile.min.js"></script>
 	<script type="text/javascript" src="js/Map.js"></script> 
  </head>
+  
   
  <body>
 	<header>
 		<h1>Map View</h1>
 		<img class="AppLogo" src = "img/AppLogo.png" alt="LOGO">
-		<a class="NavButton TopIcon" href="index.html#About">About</a>
+		<a class="NavButton TopIcon" href="index.html#About" rel="external" id="NavigateAway">About</a>
 	</header>			
+	
+	
 	<table><tr><td class="NavButton">
-		<a href="index.html#Nearby" onClick="CloseMap();">List All</a>
+		<a href="index.html#Nearby" rel="external" id="NavigateAway">List All</a>
 		</td><td class="NavButton">
-		<a href="index.html#Categories" onClick="CloseMap();">Categories</a>
+		<a href="index.html#Categories" rel="external" id="NavigateAway">Categories</a>
 		</td><td class="NavButton ActivePage">
 		Map View
 	</td></tr></table>
 	
     <div class="MapCanvas" id="MapCanvas"></div>
-	<div id="Test"></div>
+	
+	
 	<footer>
 		<button id="MapFullScreen">Full Screen</button>
 	</footer>
