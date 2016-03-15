@@ -1,3 +1,5 @@
+var apigClient = apigClientFactory.newClient();
+
 $(document).on('pagecreate', '#Nearest', function() {
 	var url = "data/testdata.json";
 	//var url = "https://mjdgbkaht5.execute-api.us-west-2.amazonaws.com/SideTracked";

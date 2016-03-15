@@ -1,3 +1,5 @@
+var apigClient = apigClientFactory.newClient();
+
 var map;
 var GPS = {
 	enableHighAccuracy: true
