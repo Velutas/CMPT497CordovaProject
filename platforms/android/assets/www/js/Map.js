@@ -1,3 +1,5 @@
+//var apigClient = apigClientFactory.newClient();
+
 var map;
 var GPS = {
 	enableHighAccuracy: true
@@ -6,8 +8,8 @@ var icons = {
   iconImage:'www/img/MapIcon.png'
 };
 
-var url = "data/testdata2.json";
-//var url = "https://mjdgbkaht5.execute-api.us-west-2.amazonaws.com/SideTracked";
+//var url = "data/testdata2.json";
+var url = "https://mjdgbkaht5.execute-api.us-west-2.amazonaws.com/SideTracked";
 
 //var ActivityTitle = "";
 //var ActivityTime = "";
@@ -48,6 +50,12 @@ document.addEventListener("deviceready", function(){
 			
 			// Get location of user => Need to build onSuccess and onError 
 			//map.getMyLocation(onSuccess, onError);
+			
+			/*$.ajaxSetup({
+				headers:{
+					"Access-Control-Allow-Origin:": "*"
+				}
+			})*/
 			
 			
 			$.getJSON(url, function(data){

@@ -1,8 +1,8 @@
-var apigClient = apigClientFactory.newClient();
+//var apigClient = apigClientFactory.newClient();
 
 $(document).on('pagecreate', '#Nearest', function() {
-	var url = "data/testdata.json";
-	//var url = "https://mjdgbkaht5.execute-api.us-west-2.amazonaws.com/SideTracked";
+	//var url = "data/testdata.json";
+	var url = "https://mjdgbkaht5.execute-api.us-west-2.amazonaws.com/SideTracked";
 
 	//Have server only return nearby locations
 	$.getJSON(url, {get_param: 'value' }, function( data ){ 
@@ -27,8 +27,8 @@ $(document).on('pagecreate', '#Categories', function() {
 	//	$("CategoryList").accordion();
 	//}
 	
-	var url = "data/testdata2.json";
-	//var url = "https://mjdgbkaht5.execute-api.us-west-2.amazonaws.com/SideTracked";
+	//var url = "data/testdata2.json";
+	var url = "https://mjdgbkaht5.execute-api.us-west-2.amazonaws.com/SideTracked";
 	
 	$.getJSON(url, {get_param: 'value' }, function( data ){
 		var Activities = "<table class='Activities' > <tr><td> <h2>Event</h2> </td><td> <h2>Location</h2> </td><td> <h2>Time</h2> </td></tr>";
