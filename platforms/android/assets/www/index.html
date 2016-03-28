@@ -43,7 +43,7 @@
 		
 		
 		
-		
+		<script type="text/javascript" src="js/Map.js"></script> 
 		
 		
         <script type="text/javascript" src="js/index.js"></script>
@@ -58,34 +58,32 @@
 		<div data-role="page" id="Nearest">
 			<div data-role="header">
 				<div data-role="navbar">
-					<h1>Nearby Action</h1>
+					<h1>Nearby Activities</h1>
 					<img class="AppLogo" src="img/AppLogo.png" alt="LOGO">
 					
-					<a class="NavButton TopIcon" href="#About">About</a>
+					<a class="NavButton TopIcon" href="#About"><img class="AboutLogo" src = "img/TOPICON.png" alt="About"></a>
 					
 					<table><tr><td class="NavButton ActivePage">
 						List All</td>
 						<td class="NavButton" >
 						<a href="#Categories">Categories</a></td>
 						<td class="NavButton" >
-						<a href="Map.html" rel="external">Map View</a>
+						<a href="#Map" onClick="OpenMap();">Map</a>
+						<!--<a href="Map.html" rel="external">Map View</a>-->
 					</td></tr></table>
 				</div>
 			</div>
 			
 			<div class="ui-content">
 			
-			
-				<div id="EventList" class="ListBuild">List</div>
-				<p>
-				<a class="Testing" href="https://mjdgbkaht5.execute-api.us-west-2.amazonaws.com/SideTracked"  rel="external">Database Test</a>
-				</p>
-				<a href="data/testdata.json" rel="external">Send Request</a>
+				<div class="ContentBG"><div class="InnerContent">
+					<div id="EventList" class="ListBuild">List</div>
+				</div></div>
 				
 			</div>
 			
 			<div data-role="footer" data-position="fixed">
-				<h1>Footer test</h1>
+				<h2>Footer test</h2>
 			</div>
 		</div>
 
@@ -95,48 +93,49 @@
 				<div data-role="navbar">
 					<h1>By Category</h1>
 					<img class="AppLogo" src = "img/AppLogo.png" alt="LOGO">
-					<a class="NavButton TopIcon" href="#About">About</a>
+					<a class="NavButton TopIcon" href="#About"><img class="AboutLogo" src = "img/TOPICON.png" alt="About"></a>
 					
 					<table><tr><td class="NavButton">
 						<a href="#Nearest">List All</a>
 						</td><td class='NavButton ActivePage'>
 						Categories
 						</td><td class="NavButton">
-						<a href="Map.html" rel="external">Map View</a>
+						<a href="#Map" onClick="OpenMap();">Map View</a>
 					</td></tr></table>
 				</div>	
 			</div>
-			
 			<div class="ui-content">
-				<div data-role="collapsible-set" data-theme="b" data-content-theme="d">
-					<div data-role="collapsible">
-						<h3>Activities</h3>
-						<div id="CategoryList" class="ListBuild Activities"></div>
+				<div class="ContentBG"><div class="InnerContent">
+					<div data-role="collapsible-set" data-theme="b" data-content-theme="d">
+						<div data-role="collapsible">
+							<h3>Activities</h3>
+							<div id="CategoryList" class="ListBuild Activities"></div>
+						</div>
+						<div data-role="collapsible">
+							<h3>Arts</h3>
+							<div id="CategoryList" class="ListBuild Arts"></div>
+						</div>
+						<div data-role="collapsible">
+							<h3>Food & Drink</h3>
+							<div id="CategoryList" class="ListBuild FoodDrink"></div>
+						</div>
+						<div data-role="collapsible">
+							<h3>Music</h3>
+							<div id="CategoryList" class="ListBuild Music"></div>
+						</div>
+						<div data-role="collapsible">
+							<h3>Other</h3>
+							<div id="CategoryList" class="ListBuild Other"></div>
+						</div>
+						
 					</div>
-					<div data-role="collapsible">
-						<h3>Arts</h3>
-						<div id="CategoryList" class="ListBuild Arts"></div>
-					</div>
-					<div data-role="collapsible">
-						<h3>Food & Drink</h3>
-						<div id="CategoryList" class="ListBuild FoodDrink"></div>
-					</div>
-					<div data-role="collapsible">
-						<h3>Music</h3>
-						<div id="CategoryList" class="ListBuild Music"></div>
-					</div>
-					<div data-role="collapsible">
-						<h3>Other</h3>
-						<div id="CategoryList" class="ListBuild Other"></div>
-					</div>
-					
-				</div>
-			
-				<!-- <div id="CategoryList" class="ListBuild"></div> --> 
+				
+					<!-- <div id="CategoryList" class="ListBuild"></div> --> 
+				</div></div>
 			</div>
 			
 			<div data-role="footer" data-position="fixed">
-				<h1>Footer</h1>
+				<h2>Footer</h2>
 			</div>
 		</div>
 		
@@ -146,7 +145,7 @@
 				<div data-role="navbar">
 					<h1>Map View</h1>
 					<img class="AppLogo" src = "img/AppLogo.png" alt="LOGO">
-					<a class="NavButton TopIcon" href="Index.html#About">About</a>
+					<a class="NavButton TopIcon" href="Index.html#About"><img class="AboutLogo" src = "img/TOPICON.png" alt="About"></a>
 								
 					<table><tr><td class="NavButton">
 						<a href="#Nearest" onClick="CloseMap();">List All</a>
@@ -174,25 +173,36 @@
 				<div data-role="navbar">
 					<h1>About App</h1>
 					<img class="AppLogo" src = "img/AppLogo.png" alt="LOGO">
-					<a class="NavButton TopIcon" href="#About">About</a>
+					<a class="NavButton TopIcon" href="#About"><img class="AboutLogo" src = "img/TOPICON.png" alt="About"></a>
 					
 					<table><tr><td class="NavButton">
 						<a href="#Nearest">List All</a>
 						</td><td class="NavButton">
 						<a href="#Categories">Categories</a>
 						</td><td class="NavButton">
-						<a href="Map.html" rel="external">Map View</a>
+						<a href="#Map" onClick="OpenMap();">Map View</a>
 					</td></tr></table>
 				</div>
 			</div>
 			
 			<div class="ui-content">
-				<p>About goes in this section</p>
+				<div class="ContentBG"><div class="InnerContent">
+					<h3>Acknowledgments</h3>
+					<p>
+					About goes in this section
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam consectetur, augue et hendrerit dignissim, ligula diam volutpat ligula, eget varius tortor purus a quam. Praesent vel quam erat. Pellentesque dui ante, cursus sed commodo non, vestibulum eu diam. In eget neque sed nisl aliquet finibus. Mauris ac tincidunt tellus, a iaculis enim. Ut ullamcorper neque vehicula ultrices rutrum. Integer sed ex at ligula imperdiet fermentum.
+
+Proin non ante ultrices, tempor erat a, tempus lectus. Vivamus sapien lorem, blandit ac nisl non, vehicula sollicitudin magna. Quisque eleifend posuere urna quis pulvinar. Cras vel ligula congue, facilisis ligula ac, dapibus risus. Nullam volutpat ultricies ipsum, ut dignissim lacus commodo nec. Proin venenatis at tellus ut elementum. Duis eu sodales nisl. Suspendisse gravida ornare placerat. Cras gravida pellentesque ex a porttitor. Donec finibus, dui vel elementum euismod, nisi neque ullamcorper mi, at tempus nibh felis sed nulla. Ut vel commodo mauris, et tempor tortor. Vivamus vestibulum placerat orci non maximus. Fusce at eros sed erat malesuada commodo.
+
+Sed rutrum et lorem a convallis. Proin ac sapien eu tortor vestibulum dignissim. Phasellus libero orci, sollicitudin eget consectetur in, feugiat quis urna. Suspendisse dictum porttitor auctor. Praesent dapibus interdum sem, ut semper nunc finibus eu. Cras varius commodo lobortis. Pellentesque vitae convallis tellus. Ut sed lacus mi. In eu hendrerit dolor, consequat aliquam dolor. Cras eu nisl facilisis, vestibulum lacus non, feugiat orci. Cras non commodo ex, a varius neque.
+
+Nullam fermentum sagittis velit. Aenean dui tellus, maximus sit amet nibh sit amet, sagittis vulputate arcu. Aenean vehicula nulla libero, non hendrerit felis faucibus ut. Ut aliquet ex lectus, posuere feugiat dui dapibus sed. Fusce ut nisi tempus, blandit dui a, mollis ante. Vivamus nibh risus, posuere vitae orci vitae, sodales elementum quam. Sed nec tempor mi. Donec quis nibh venenatis, luctus turpis eget, finibus felis. Duis eget enim faucibus, ornare orci eu, egestas libero. Aliquam sit amet commodo lectus. Aliquam luctus tempus mauris, et volutpat nibh laoreet vel.
+
+Maecenas posuere felis id massa consequat congue. Integer interdum mattis felis ut hendrerit. Quisque vel eros at nibh facilisis blandit quis ac neque. Ut quis consequat quam. Nulla rhoncus ex ac metus fringilla cursus. Sed tempus velit diam, vel bibendum ipsum vehicula eu. Fusce pretium, odio nec feugiat sagittis, dui lorem vestibulum orci, a accumsan lacus erat vel neque. Nunc molestie quam eu velit feugiat, eget rhoncus erat ultrices. Donec sit amet ipsum et libero imperdiet commodo. Proin scelerisque ante ut metus iaculis fringilla.
+					</p>
+				</div></div>
 			</div>
 			
-			<div data-role="footer" data-position="fixed">
-				<h1>I don't think this page acutally needs a footer...</h1>
-			</div>
 		</div>
 	</body>
 </html>

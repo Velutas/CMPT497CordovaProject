@@ -36,7 +36,6 @@
     </author>
     <content src="index.html" />
     <access origin="*" />
-    <access origin="https://mjdgbkaht5.execute-api.us-west-2.amazonaws.com/SideTracked" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <allow-intent href="tel:*" />

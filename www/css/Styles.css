@@ -1,5 +1,5 @@
 body {
-	background-image: url("../img/BG.png");
+	/*background-image: url("../img/BG.png");*/
     background-repeat:repeat-y;
     background-position:center center;
     background-attachment:scroll;
@@ -7,16 +7,21 @@ body {
 	
     -webkit-touch-callout: none; 
 	margin: 0px;
-	margin-top: 8px;
+	margin-top: 0;
 	
 	font-family: Helvetica;
     font-size:1em;
+	
+	color: #E4E4E4;
+	/*color: black;*/
 }
 
 
 h1 {
 	outline: none;
-	color:#E4E4E4;
+	
+	
+	color:#d7912d;
 	
     overflow:visible;
 	display: inline-block;
@@ -31,7 +36,9 @@ h1 {
 
 h2 {
 	outline: none;
-	color:#E4E4E4;
+	
+	
+	color:#d7912d;
 	
     overflow:visible;
 	display: inline-block;
@@ -46,20 +53,53 @@ h2 {
 
 h3 {
 	outline: none;
-	color: black;
+	filter: alpha(opacity=100);
+	opacity: 1;
 	
+	margin-top: 0;
+	
+	color:#d7912d !important;
+	font-size: 1em;
 }
 
+h4 {
+	outline: none;
+	
+	
+	color:#d7912d;
+	
+    overflow:visible;
+	display: inline-block;
+	
+	padding: 0;
+	padding-top: .28em;
+	margin: 0;
+	
+	font-size:1em;
+	font-variant:small-caps;
+}
 
 p{
 	text-align: justify;
+	filter: alpha(opacity=100);
+	opacity: 1;
+	
+	margin: .5em .5em;
+	padding: .5em;
 }
 
 a:link, a:visited, a:active, a:hover {
-	color: #E4E4E4;
+	
+	/*color: #E4E4E4;d7912d*/
+	color:#d7912d !important;
+	
+	
+	
 	font-size:1em;
 	text-decoration: none;
 	text-shadow: none;
+	
+	width: 80%;
 	
 	background-color: transparent !important;
 	border-color: transparent !important;
@@ -84,32 +124,132 @@ footer button{
 	background-color: transparent;
 }
 
-.Testing{
-	color: red;
+
+html, body, #Map{
+	height: 100%;
 }
 
+#Map, #Map *{
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+/*Solution for fixing map from http://stackoverflow.com/questions/21552308/set-content-height-100-jquery-mobile*/
+#Map .ui-content{
+	height: calc(100% - 4.5em);
+}
+
+html, body, #About, #Nearest, #Categories{
+	height: 100%;
+}
+
+#About, #About *{
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+#Nearest, #Nearest *{
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+#Categories, #Categories *{
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+#About .ui-content{
+	height: calc(100% - 6.5em);
+}
+
+#Nearest .ui-content{
+	height: calc(100% - 6em);
+}
+
+#Categories .ui-content{
+	height: calc(100% - 6.5em);
+}
 
 #Nearest{
+	background-image: url("../img/BG.png");
+	background-size: contain;
 }
 
 #Categories{
+	background-image: url("../img/BG.png");
+	background-size: contain;
 }
 
 #About{
+	background-image: url("../img/BG.png");
+	background-size: contain;
 }
 
 .ui-header{
 	/*background-color: #003300;*/
+	background-image: url("../img/HEADER.png");
+	background-size: 100% 100%;
 }
 
 .ui-footer{
 	/*background-color: #003300;*/
+	background-image: url("../img/FOOTER.png");
+	background-size: 100% 100%;
+	
+}
+
+.ui-footer .ui-btn {
+	
+	background-image: url("../img/MAPFOOTER.png");
+	background-size: 100% 100%;
+	border: none;
+	
+	color:#d7912d;
+}
+
+.ContentBG{
+	position: relative;
+	margin-top: 0.2em;
+	margin-left: auto;
+	margin-right: auto;
+	
+	width: 95%;
+	height: 99%;
+	
+	background-color: rgba(18, 18, 18, .5)/*#121212*/;
+	/*filter: alpha(opacity=50);*/
+	/*opacity: 0.5;*/
+	border-radius: 15px;
+	
+	word-wrap: break-word;
+	overflow: auto;
+}
+
+.InnerContent{
+	position: relative;
+	margin-top: .8em;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 0em;
+	
+	width: 95%;
+	height: 93%;
+	overflow: auto;
+	
+	filter: alpha(opacity=100);
+	opacity: 1;
+	
+	border-radius: 10px;
+	word-wrap: break-word;
 }
 
 table{
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 6px;
+	margin-top: .1em;
 	
 	height: 1em;
 	width: 100%;
@@ -119,78 +259,131 @@ table{
 	border-collapse: collapse;
 }
 
+th{
+	text-align: justify;
+	font-size: .8em;
+	font-weight: normal;
+}
+
+
+table a:link,table a:visited,table a:active,table a:hover {
+	
+	/*color: #E4E4E4;d7912d*/
+	color:#d7912d;
+	
+	
+	
+	font-size:1em;
+	text-decoration: none;
+	text-shadow: none;
+	
+	width: 80%;
+	
+	background-color: transparent !important;
+	border-color: transparent !important;
+	
+}
+
 .ListBuild table{
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 6px;
+	margin-top: .1em;
 	
-	width: 98%;
+	width: 95%;
+	
+	/*word-wrap: break-word;*/
 	
 	border-collapse: collapse;
 }
 
-.ListBuild td:nth-child(1){width:50%;}
-.ListBuild td:nth-child(2){width:30%;}
-.ListBuild td:nth-child(3){width:10%;}
+.ListBuild td:nth-child(1){width:65%;}
+.ListBuild td:nth-child(2){width:35%;}
 
 .Activities {
 	/*color: blue;*/
 }
 
 .NavButton {
-	/*background-color:#333333;*/
+	background-image: url("../img/NAVBUTTON.png");
+	background-size: 100% 100%;
 	padding: 0px 0px;
 	width: 33%;
 	
-	border-right: 1px solid grey;
 	
-	color: #E4E4E4;
+	/*color: #E4E4E4;#d7912d*/
+	
 	font-size:.8em;
 	text-align: center;
-	font-size:18px;
+	font-size: 1em;
 	font-weight: 700;
 	/*font-variant:small-caps;*/
 	
 	text-shadow: none;
+	border-bottom: 1px solid #000;
 }
 
 .ActivePage {
 	/*background-color: grey;*/
+	color:#E4E4E4;
+	
+	font-weight: 1000;
+	text-shadow: -1px -1px 0px rgba(255,255,255,0.3), 1px 1px 0px rgba(0,0,0,0.8);
+	background-image: url("../img/INSETBUTTON.png");
+	background-size: 100% 100%;
 }
+
+
 
 .AppLogo{
 	float: left;
 	display: inline-block;
 	margin: -.2em 1em;
-	padding: .5em 0;
+	padding: .4em 0;
 	
 	font-variant:small-caps;
 	color: #E4E4E4;
 	font-size:1.25em;
 	
-	width: 30px;
+	width: 1.5em;
 	
 	/*background-image: url('../img/AppLogo.png'); */
 }
 
-.TopIcon{
+.AboutLogo{
+	float: left;
+	display: inline-block;
+	margin: -.2em 1em;
+	padding: .5em 0;
+	
+	width: 1.9em;
+	
+}
+
+.EventLogo{
+	width: 1em;
+}
+
+.NavButton.TopIcon{
+	/*background-image: url("../img/TOPICON.png");*/
+	/*background-size: 100% 100%;*/
+	background-image: none;
+	
 	color: #E4E4E4;
 	
 	float: right;
 	display: inline-block;
-	padding-top: .8em;
+	padding-top: 0.1em;
 	margin: 0 1em;
 	
-	width: 55px;
+	width: 3em;
 	
 	border-left: 0px;
 }
 
 .MapCanvas{
-	margin-top: 10px;
-	margin-bottom: 10px;
+	margin: 0;
 	width:100%;
-	height: 450px;
+	height: 100%;
 }
 
 
@@ -203,7 +396,7 @@ table{
 }
 
 .ui-page.ui-body-c {
-    background: url("../img/BG.png");
+    /*background: url("../img/BG.png");*/
     background-repeat:no-repeat;
     background-position:center center;
     background-size:cover;  
@@ -217,4 +410,30 @@ table{
 .ui-accordion-header-active {
 	outline: none;
     border-bottom: none;
+}
+
+.ui-collapsible-content{
+	padding: 0em .5em;
+}
+
+.ui-nosvg .ui-icon-minus:after {
+    background-image: url(../img/MINUSICON.png);
+	background-size:25px;
+    width:20px;
+    height:20px;
+}
+.ui-nosvg .ui-icon-plus:after {
+    /*background: url("../img/MapIcon.png") no-repeat -5px !important;*/
+	background-image: url("../img/PLUSICON.png");
+	background-size:25px;
+    width:20px;
+    height:20px;
+}
+
+/*Solution for blue glow from: http://stackoverflow.com/questions/12606437/for-a-jquery-ui-button-how-can-i-remove-the-blue-glow-on-focus*/
+*:focus {
+    outline: none !important;
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
 }

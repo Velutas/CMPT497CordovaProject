@@ -7,7 +7,7 @@ var GPS = {
 var icons = {
   iconImage:'www/img/MapIcon.png'
 };
-
+var imgurl = 'img/AppLogo.png';
 //var url = "data/testdata2.json";
 var url = "https://mjdgbkaht5.execute-api.us-west-2.amazonaws.com/SideTracked";
 
@@ -17,6 +17,7 @@ var url = "https://mjdgbkaht5.execute-api.us-west-2.amazonaws.com/SideTracked";
 
 /* Main function */
 document.addEventListener("deviceready", function(){
+//$(document).on('pagecreate', '#Map', function() {
 		var div = document.getElementById("MapCanvas");
 		
 		/* Using set location of Vancouver for now, since data on events is 
@@ -87,13 +88,24 @@ document.addEventListener("deviceready", function(){
 							map.addEventListener("ZoomOut", function(){
 								marker.setVisible(false);
 							});
+							map.addEventListener("ZoomInMax", function(){
+								marker.setVisible(true);
+								marker.setIcon({
+									'url': icons.iconImage,
+									'size': {
+										'width' : 28,
+										'height': 28
+									}
+								});
+							});
+							
 							map.addEventListener("ZoomIn", function(){
 								marker.setVisible(true);
 								marker.setIcon({
 									'url': icons.iconImage,
 									'size': {
-										'width' : 18,
-										'height': 18
+										'width' : 20,
+										'height': 20
 									}
 								});
 							});
@@ -149,16 +161,23 @@ function CloseMap(){
 	//map.remove();
 }
 
+function OpenMap(){
+	map.setVisible(true);
+}
+
 function onMapCameraChanged(position) {
 	map.getCameraPosition(function(camera) {
 		if (camera.zoom < 12 ){
 			map.trigger("ZoomOut");
 		}
-		if (camera.zoom <= 13  && camera.zoom >= 12){
+		if (camera.zoom >= 12 && camera.zoom < 13){
 			map.trigger("ZoomMax");
 		}
-		if (camera.zoom > 13 ){
+		if (camera.zoon >= 13 && camera.zoom < 15){
 			map.trigger("ZoomIn");
+		}
+		if (camera.zoom >= 15){
+			map.trigger("ZoomInMax");
 		}
 	});
 }

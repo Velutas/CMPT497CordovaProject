@@ -1,5 +1,7 @@
 //var apigClient = apigClientFactory.newClient();
 
+var imgurl = 'img/AppLogo.png';
+
 $(document).on('pagecreate', '#Nearest', function() {
 	//var url = "data/testdata.json";
 	var url = "https://mjdgbkaht5.execute-api.us-west-2.amazonaws.com/SideTracked";
@@ -7,13 +9,28 @@ $(document).on('pagecreate', '#Nearest', function() {
 	//Have server only return nearby locations
 	$.getJSON(url, {get_param: 'value' }, function( data ){ 
 		var Nearby = "<table>"; 
-		Nearby += "<tr><td> <h2>Event</h2> </td><td> <h2>Location</h2> </td><td> <h2>Time</h2> </td></tr>";
+		Nearby += "";
 		
 		$.each(data, function(index, element) {
-			Nearby += "<tr><td>" + element.Name +
-			"</td><td>" + element.Location +
-			"</td><td>" + element.Time +
-			"</td></tr>";
+			if (imgurl != ""){
+				Nearby += "<tr><td>" + "<img class='EventLogo' src=" + imgurl + "> <h4>" + element.Name + "</h4>" +
+				"</tr><tr></td><td>" + element.Location +
+				"</td><td>" + element.Time +
+				"</td></tr>" +
+				"<tr><td>" + "DATES WILL GO HERE" +
+				"</td><td>" + "LINK MORE INFO" +
+				"</td></tr><tr><th colspan=2 style='font-size: .8em'>" + "Limit the font size for this section..." +
+				"</th></tr>";
+			} else {
+				Nearby += "<tr><td>" + "<img class='EventLogo' src=" + imgurl + "> <h4>" + element.Name + "</h4>" +
+				"</tr><tr></td><td>" + element.Location +
+				"</td><td>" + element.Time +
+				"</td></tr>" +
+				"<tr><td>" + "DATES WILL GO HERE" +
+				"</td><td>" + "LINK MORE INFO" +
+				"</td></tr><tr><th colspan=2 style='font-size: .8em'>" + "Limit the font size for this section..." +
+				"</th></tr>";
+			}
 		});
 		
 		Nearby += "</table>";
@@ -31,42 +48,117 @@ $(document).on('pagecreate', '#Categories', function() {
 	var url = "https://mjdgbkaht5.execute-api.us-west-2.amazonaws.com/SideTracked";
 	
 	$.getJSON(url, {get_param: 'value' }, function( data ){
-		var Activities = "<table class='Activities' > <tr><td> <h2>Event</h2> </td><td> <h2>Location</h2> </td><td> <h2>Time</h2> </td></tr>";
-		var Arts = "<table> <tr><td> <h2>Event</h2> </td><td> <h2>Location</h2> </td><td> <h2>Time</h2> </td></tr>";
-		var FoodDrink = "<table> <tr><td> <h2>Event</h2> </td><td> <h2>Location</h2> </td><td> <h2>Time</h2> </td></tr>";
-		var Music = "<table> <tr><td> <h2>Event</h2> </td><td> <h2>Location</h2> </td><td> <h2>Time</h2> </td></tr>";
-		var Other = "<table> <tr><td> <h2>Event</h2> </td><td> <h2>Location</h2> </td><td> <h2>Time</h2> </td></tr>";
+		var Activities = "<table class='Activities' > ";
+		var Arts = "<table> ";
+		var FoodDrink = "<table> ";
+		var Music = "<table> ";
+		var Other = "<table> ";
 		
 		$.each(data, function(index, element) {
 			if(element.Category == "Activities"){
-				Activities += "<tr><td>" + element.Name +
-				"</td><td>" + element.Location +
-				"</td><td>" + element.Time +
-				"</td></tr>";
+				if (imgurl != ""){
+					Activities += "<tr><td>" + "<img class='EventLogo' src=" + imgurl + "> <h4>" + element.Name + "</h4>" +
+					"</tr><tr></td><td>" + element.Location +
+					"</td><td>" + element.Time +
+					"</td></tr>" +
+					"<tr><td>" + "DATES WILL GO HERE" +
+					"</td><td>" + "LINK MORE INFO" +
+					"</td></tr><tr><th colspan=2 style='font-size: .8em'>" + "Limit the font size for this section..." +
+					"</th></tr>";
+				} else{
+					Activities += "<tr><td>" + "<img class='EventLogo' src=" + imgurl + "> <h4>" + element.Name + "</h4>" +
+					"</tr><tr></td><td>" + element.Location +
+					"</td><td>" + element.Time +
+					"</td></tr>" +
+					"<tr><td>" + "DATES WILL GO HERE" +
+					"</td><td>" + "LINK MORE INFO" +
+					"</td></tr><tr><th colspan=2 style='font-size: .8em'>" + "Limit the font size for this section..." +
+					"</th></tr>";
+				}
 			}
 			if(element.Category == "Arts"){
-				Arts += "<tr><td>" + element.Name +
-				"</td><td>" + element.Location +
-				"</td><td>" + element.Time +
-				"</td></tr>";
+				if (imgurl != ""){
+					Arts += "<tr><td>" + "<img class='EventLogo' src=" + imgurl + "> <h4>" + element.Name + "</h4>" +
+					"</tr><tr></td><td>" + element.Location +
+					"</td><td>" + element.Time +
+					"</td></tr>" +
+					"<tr><td>" + "DATES WILL GO HERE" +
+					"</td><td>" + "LINK MORE INFO" +
+					"</td></tr><tr><th colspan=2 style='font-size: .8em'>" + "Limit the font size for this section..." +
+					"</th></tr>";
+				} else{
+					Arts += "<tr><td>" + "<img class='EventLogo' src=" + imgurl + "> <h4>" + element.Name + "</h4>" +
+					"</tr><tr></td><td>" + element.Location +
+					"</td><td>" + element.Time +
+					"</td></tr>" +
+					"<tr><td>" + "DATES WILL GO HERE" +
+					"</td><td>" + "LINK MORE INFO" +
+					"</td></tr><tr><th colspan=2 style='font-size: .8em'>" + "Limit the font size for this section..." +
+					"</th></tr>";
+				}
 			}
 			if(element.Category == "Food & Drink"){
-				FoodDrink += "<tr><td>" + element.Name +
-				"</td><td>" + element.Location +
-				"</td><td>" + element.Time +
-				"</td></tr>";
+				if (imgurl != ""){
+					FoodDrink += "<tr><td>" + "<img class='EventLogo' src=" + imgurl + "> <h4>" + element.Name + "</h4>" +
+					"</tr><tr></td><td>" + element.Location +
+					"</td><td>" + element.Time +
+					"</td></tr>" +
+					"<tr><td>" + "DATES WILL GO HERE" +
+					"</td><td>" + "LINK MORE INFO" +
+					"</td></tr><tr><th colspan=2 style='font-size: .8em'>" + "Limit the font size for this section..." +
+					"</th></tr>";
+				} else{
+					FoodDrink += "<tr><td>" + "<img class='EventLogo' src=" + imgurl + "> <h4>" + element.Name + "</h4>" +
+					"</tr><tr></td><td>" + element.Location +
+					"</td><td>" + element.Time +
+					"</td></tr>" +
+					"<tr><td>" + "DATES WILL GO HERE" +
+					"</td><td>" + "LINK MORE INFO" +
+					"</td></tr><tr><th colspan=2 style='font-size: .8em'>" + "Limit the font size for this section..." +
+					"</th></tr>";
+				}
 			}
 			if(element.Category == "Music"){
-				Music += "<tr><td>" + element.Name +
-				"</td><td>" + element.Location +
-				"</td><td>" + element.Time +
-				"</td></tr>";
+				if (imgurl != ""){
+					Music += "<tr><td>" + "<img class='EventLogo' src=" + imgurl + "> <h4>" + element.Name + "</h4>" +
+					"</tr><tr></td><td>" + element.Location +
+					"</td><td>" + element.Time +
+					"</td></tr>" +
+					"<tr><td>" + "DATES WILL GO HERE" +
+					"</td><td>" + "LINK MORE INFO" +
+					"</td></tr><tr><th colspan=2 style='font-size: .8em'>" + "Limit the font size for this section..." +
+					"</th></tr>";
+				} else {
+					Music += "<tr><td>" + "<img class='EventLogo' src=" + imgurl + "> <h4>" + element.Name + "</h4>" +
+					"</tr><tr></td><td>" + element.Location +
+					"</td><td>" + element.Time +
+					"</td></tr>" +
+					"<tr><td>" + "DATES WILL GO HERE" +
+					"</td><td>" + "LINK MORE INFO" +
+					"</td></tr><tr><th colspan=2 style='font-size: .8em'>" + "Limit the font size for this section..." +
+					"</th></tr>";
+				}
 			}
 			if(element.Category == "Other"){
-				Other += "<tr><td>" + element.Name +
-				"</td><td>" + element.Location +
-				"</td><td>" + element.Time +
-				"</td></tr>";
+				if (imgurl != ""){
+					Other += "<tr><td>" + "<img class='EventLogo' src=" + imgurl + "> <h4>" + element.Name + "</h4>" +
+					"</tr><tr></td><td>" + element.Location +
+					"</td><td>" + element.Time +
+					"</td></tr>" +
+					"<tr><td>" + "DATES WILL GO HERE" +
+					"</td><td>" + "LINK MORE INFO" +
+					"</td></tr><tr><th colspan=2 style='font-size: .8em'>" + "Limit the font size for this section..." +
+					"</th></tr>";
+				} else {
+					Other += "<tr><td>" + "<img class='EventLogo' src=" + imgurl + "> <h4>" + element.Name + "</h4>" +
+					"</tr><tr></td><td>" + element.Location +
+					"</td><td>" + element.Time +
+					"</td></tr>" +
+					"<tr><td>" + "DATES WILL GO HERE" +
+					"</td><td>" + "LINK MORE INFO" +
+					"</td></tr><tr><th colspan=2 style='font-size: .8em'>" + "Limit the font size for this section..." +
+					"</th></tr>";
+				}
 			}
 		});
 		Activities += "</table>";
