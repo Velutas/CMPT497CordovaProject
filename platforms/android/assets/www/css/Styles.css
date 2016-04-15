@@ -429,3 +429,11 @@ table a:link,table a:visited,table a:active,table a:hover {
     width:20px;
     height:20px;
 }
+
+/*Solution for blue glow from: http://stackoverflow.com/questions/12606437/for-a-jquery-ui-button-how-can-i-remove-the-blue-glow-on-focus*/
+*:focus {
+    outline: none !important;
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+}

@@ -104,8 +104,8 @@ document.addEventListener("deviceready", function(){
 								marker.setIcon({
 									'url': icons.iconImage,
 									'size': {
-										'width' : 20,
-										'height': 20
+										'width' : 18,
+										'height': 18
 									}
 								});
 							});
@@ -167,16 +167,17 @@ function OpenMap(){
 
 function onMapCameraChanged(position) {
 	map.getCameraPosition(function(camera) {
-		if (camera.zoom < 12 ){
-			map.trigger("ZoomOut");
-		}
-		if (camera.zoom >= 12 && camera.zoom < 13){
-			map.trigger("ZoomMax");
-		}
-		if (camera.zoon >= 13 && camera.zoom < 15){
-			map.trigger("ZoomIn");
-		}
-		if (camera.zoom >= 15){
+		if (camera.zoom <= 15){
+				if (camera.zoom < 12 ){
+					map.trigger("ZoomOut");
+				}
+				if (camera.zoom >= 12 && camera.zoom < 13){
+					map.trigger("ZoomMax");
+				}
+				if (camera.zoon >= 13){
+					map.trigger("ZoomIn");
+				}
+		} else {
 			map.trigger("ZoomInMax");
 		}
 	});
