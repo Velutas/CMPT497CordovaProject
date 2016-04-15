@@ -11,9 +11,17 @@ var imgurl = 'img/AppLogo.png';
 //var url = "data/testdata2.json";
 var url = "https://mjdgbkaht5.execute-api.us-west-2.amazonaws.com/SideTracked";
 
+
+var Lat;
+var Long;
+
 //var ActivityTitle = "";
 //var ActivityTime = "";
+var option = {
+	enableHighAccuracy: true
+};
 
+//localStorage.setItem("test", "Testing");
 
 /* Main function */
 document.addEventListener("deviceready", function(){
@@ -27,6 +35,13 @@ document.addEventListener("deviceready", function(){
 		
 		map = plugin.google.maps.Map.getMap(div);
 		
+		
+		
+		//GET LOCATION
+		navigator.geolocation.getCurrentPosition(function(position) {
+			Lat = position.coords.latitude;
+			Long = position.coords.longitude;
+		});
 		
 		
 		
@@ -62,7 +77,7 @@ document.addEventListener("deviceready", function(){
 			$.getJSON(url, function(data){
 				$.each(data, function(index, element) {
 					var ActivityTitle = element.Name;
-					var ActivityTime = element.Time;
+					var ActivityTime = "Occurs on: " + element.Date +" at:" + element.Time + "!";
 					var NewLocation = new plugin.google.maps.LatLng(element.LatLong[0], element.LatLong[1]);
 					
 					// Create map markers at appropriate locations
@@ -93,8 +108,8 @@ document.addEventListener("deviceready", function(){
 								marker.setIcon({
 									'url': icons.iconImage,
 									'size': {
-										'width' : 28,
-										'height': 28
+										'width' : 27,
+										'height': 27
 									}
 								});
 							});
@@ -104,8 +119,8 @@ document.addEventListener("deviceready", function(){
 								marker.setIcon({
 									'url': icons.iconImage,
 									'size': {
-										'width' : 18,
-										'height': 18
+										'width' : 16,
+										'height': 16
 									}
 								});
 							});
@@ -114,8 +129,8 @@ document.addEventListener("deviceready", function(){
 								marker.setIcon({
 									'url': icons.iconImage,
 									'size': {
-										'width' : 12,
-										'height': 12
+										'width' : 10,
+										'height': 10
 									}
 								});
 							});
@@ -168,13 +183,13 @@ function OpenMap(){
 function onMapCameraChanged(position) {
 	map.getCameraPosition(function(camera) {
 		if (camera.zoom <= 15){
-				if (camera.zoom < 12 ){
+				if (camera.zoom < 11 ){
 					map.trigger("ZoomOut");
 				}
-				if (camera.zoom >= 12 && camera.zoom < 13){
+				if (camera.zoom >= 11 && camera.zoom < 13){
 					map.trigger("ZoomMax");
 				}
-				if (camera.zoon >= 13){
+				if (camera.zoom >= 13){
 					map.trigger("ZoomIn");
 				}
 		} else {
